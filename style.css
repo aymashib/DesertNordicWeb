@@ -1,0 +1,202 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 14.3px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Loader Styles */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.loader {
+  position: relative;
+  width: 256px;
+  height: 224px;
+}
+
+.dune {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 128px;
+  background-color: black;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}
+
+#particles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 128px;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.sun {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  background-color: black;
+  border-radius: 50%;
+  animation: sunBounce 2s infinite ease-in-out;
+}
+
+@keyframes sunBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+/* Layout */
+.header {
+  text-align: center;
+  margin: 20px;
+}
+
+.logo {
+  height: 100px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(80vh - 100px);
+}
+
+.grid {
+  display: flex;
+  gap: 100px;
+}
+
+.item {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.footer {
+  font-family: 'IBM Plex Mono', monospace;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+}
+
+/* Navbar Styles */
+ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 5px 10px;
+  position: relative;
+  margin: 0 10px;
+  transition: all 0.5s;
+}
+
+a:hover {
+  background-color: black;
+  color: white;
+}
+
+a:before {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 12px;
+  height: 12px;
+  border: 3px solid black;
+  color: white;
+  border-width: 0 0 3px 3px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+a:hover:before {
+  opacity: 1;
+  bottom: -7px;
+  left: -7px;
+}
+
+a:after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 12px;
+  height: 12px;
+  border: 3px solid black;
+  border-width: 3px 3px 0 0;
+  opacity: 0;
+  transition: all 0.3s;
+  color: white;
+}
+
+a:hover:after {
+  opacity: 1;
+  top: -7px;
+  right: -7px;
+}
